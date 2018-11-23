@@ -1,0 +1,43 @@
+import javax.mail.*;
+import java.util.Properties;
+import javax.mail.internet.*;
+
+public class SendEmail {
+
+	public static void main(String[] args) {
+		
+	      
+		try {
+			String username = "speto";
+			String password = "Natalja.kiara00";
+			String to = "speto@studenti.uninsubria.it";
+			String host = "smtp.office365.com";
+			Properties props = System.getProperties();
+		    props.put("mail.smtp.host",host);
+		    props.put("mail.smtp.starttls.enable", "true");
+		    props.put("mail.smtp.port",587);
+		    
+		    Session session = Session.getInstance(props);
+		    
+		    Message msg = new MimeMessage(session);
+		    msg.setFrom(new InternetAddress("mferrazzo@studenti.uninsubria.it"));
+		    msg.setRecipients(Message.RecipientType.TO,InternetAddress.parse(to, false));
+		    msg.setSubject("\"This is the Subject Line!\"");
+		    msg.setText("This is actual message");
+		    
+		    Transport.send(msg,username,password);
+		    Transport.(msg,);
+		    System.out.println("\nMail was sent successfully.");   
+			
+			
+			
+			
+			
+	      } catch (MessagingException mex) {
+	         mex.printStackTrace();
+	      }
+	
+
+	}
+
+}
