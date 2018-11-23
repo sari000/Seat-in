@@ -9,8 +9,8 @@ public class SendEmail {
 	      
 		try {
 			String username = "speto";
-			String password = "Natalja.kiara00";
-			String to = "speto@studenti.uninsubria.it";
+			String password = "**********";
+			String to = "*****@studenti.uninsubria.it";
 			String host = "smtp.office365.com";
 			Properties props = System.getProperties();
 		    props.put("mail.smtp.host",host);
